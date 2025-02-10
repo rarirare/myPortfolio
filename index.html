@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon.ico">
+<link rel="icon" type="image/x-icon" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/favicon_io/site.webmanifest">
+    <title>Document</title>
+</head>
+<body>
+    <div class="logoName">
+        <a href="/" target="_self"><img src="myLogo.png" id="logoName" alt="" srcset="" style="position:absolute; width: 10em;height:auto; z-index:200;margin-left: 1em; margin-top: 1em; z-index:1;"></a>
+    </div>
+    
+    <button id="menu-toggle" class="menu-toggle">
+        <span class="hamburger"></span>
+    </button>
+
+    <nav id="mobile-nav" class="mobile-nav">
+        <div id="navig">
+            <a href="#about" class="btn">About</a>
+            <a href="#work" class="btn">Work</a>
+            <a href="#other" class="btn">Other</a>
+        </div>
+    </nav>
+
+    <!-- marquee for work -->
+    <!-- <div id="marquee">
+        <div class="marqueeWrapper">
+            <div class="marqueeText">
+                <span style="color: red;">Design.</span>
+                <span style="color:rebeccapurple">Branding.</span>
+                <span style="color:rgb(51, 153, 85)">Art Direction.</span>
+                <span style="color:rgb(51, 133, 153)">Web Development.</span>
+                <span style="color:rgb(114, 153, 51)">Strategy.</span>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <!-- <div class="marqueeText">
+                <span style="color: red;">Design.</span>
+                <span style="color:rebeccapurple">Branding.</span>
+                <span style="color:rgb(51, 153, 85)">Art Direction.</span>
+                <span style="color:rgb(51, 133, 153)">Web Development.</span>
+                <span style="color:rgb(114, 153, 51)">Strategy.</span>
+            </div>
+            <div class="marqueeText">
+                <span style="color: red;">Design.</span>
+                <span style="color:rebeccapurple">Branding.</span>
+                <span style="color:rgb(51, 153, 85)">Art Direction.</span>
+                <span style="color:rgb(51, 133, 153)">Web Development.</span>
+                <span style="color:rgb(114, 153, 51)">Strategy.</span>
+            </div>
+        </div>
+    </div> --> 
+
+
+    <section id="home" hidden>
+        
+        <div id="sketch-container">
+            <!-- <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1293.68 441.2">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: #000;
+                      stroke: #000;
+                      stroke-miterlimit: 10;
+                    }
+                  </style>
+                </defs>
+                <path id="rahul" class="cls-1" d="M36.63,115.65h9.61c4.84,0,9.37,1.35,13.23,3.67,7.4,4.48,12.35,12.62,12.35,21.91v66.2h21.06v.07h76.56v-92.56h37.88v92.29h10.75v.02h62v-.03h24.86v-92.56h40.19v92.56h36.13V22.61h25.36v163.34c1.94,12.2,13.74,21.53,26.49,21.53h81.59V22.61h25.36v159.77c0,1.2.08,2.38.26,3.54,1.48,10.78,9.67,19.4,20.24,21.53h83.2l-.35-21.53h-41.82c-3.7,0-7.21-.78-10.39-2.21-7.32-3.24-12.81-9.82-14.57-17.82l-.43-8.6V.83h-24.58v-.33h-62v.36h-11.04v185.09h-20.2c-.02.16-.05.33-.03,0-9.3-3.82-15.61-14.9-15.61-25.58V.86h-33.24v-.36h-62v.1h-2.37v92.56h-40.19V.6h-36.13v184.14h-25.36V26.3c0-1.32-.09-2.61-.3-3.89-1.72-11.36-10.94-20.26-22.46-21.53h-87.38v185.11h-25.36v-57.8c-.4-4.66-2.07-8.95-4.64-12.54-4.63-6.51-12.23-10.75-20.82-10.75h25.46V24.73c-.04-.54-.11-1.08-.19-1.6-1.72-11.36-10.94-20.26-22.44-21.53H.5v205.83h36.13v-91.78ZM169.43,22.41h12.3c3.79,0,7.39.82,10.62,2.31,8.83,4.02,14.96,12.93,14.96,23.26v45.45h-37.88V22.41ZM36.63,23.13h9.61c3.82,0,7.45.83,10.71,2.35,8.79,4.05,14.87,12.92,14.87,23.22v45.45h-35.19V23.13Z"/>
+                <path id="kondamgire" class="cls-1" d="M1293.18,255.2v-21.39h-102.29v183.32h-26.21v-57.51c-.4-4.66-2.07-8.95-4.64-12.54-4.63-6.51-12.23-10.75-20.82-10.75h25.46v-80.17c-.04-.54-.11-1.08-.19-1.6-1.72-11.36-10.94-20.26-22.44-21.53h-84.81v181.97h-28.61v-181.97h-174.87v184.45h-26.33v-183.12h-49.14c-1.61.18-3.18.5-4.68.97-9.26,2.83-16.28,10.82-17.76,20.61-.2,1.28-.3,2.58-.3,3.9,0-1.32-.09-2.62-.3-3.9-1.48-9.79-8.5-17.78-17.77-20.61-1.51-.47-3.07-.8-4.68-.97h-50.49v183.29h-25.99v-158.4c0-1.32-.09-2.61-.3-3.89-1.72-11.37-10.94-20.28-22.46-21.55h-87.38v184.5h-25.99v-158.6c0-1.47-.12-2.91-.36-4.3-2.05-12.08-12.55-21.27-25.22-21.27l-43.85-.13-21.84-.06v-.77h-62v.05h-22.56v118.94l-51.33-118.94h-36.13v184.09h-21.89v-162.05c0-.13,0-.28-.01-.42-.2-11.06-8.81-20.14-19.93-21.53h-16.19v.26h-51.96v-.09h-77.81v68.27c0,7.02-3.38,13.27-8.67,17.33-3.9,3-8.85,4.8-14.25,4.8h-9.58v-90.4H.5v205.99h36.13v-94.1h9.58c5.4,0,10.33,1.79,14.24,4.8,5.29,4.04,8.68,10.31,8.68,17.33v71.98h36.13v-82.77c0-4.15-1.18-8.02-3.24-11.34-3.74-6.08-10.41-10.27-18.14-10.75h-.93c-.2.01-.39.01-.59.01s-.39,0-.59-.01h-.93c.08-.01.17-.01.26-.01.42-.03.85-.04,1.26-.04s.85.01,1.26.04c7.8-.42,14.57-4.6,18.37-10.72,2.07-3.31,3.27-7.21,3.27-11.37v-57.36h26.35v159.18c0,12.73,9.3,23.28,21.46,25.24h45.83v.07h29.04s62,0,62,0v-.05h3.11v-114.45l51.06,114.96,1.22-.51h35.17v-184.42h25.54v185.25h140.16v.2h36.13v-92.65h37.88v92.38h22.62v.07h39.5v.3h36.13v-183.93c10.97,2.9,19.04,12.9,19.04,24.79v56.89l36.13,1.6v-58.48c0-11.4,7.43-21.07,17.69-24.39v182.52h36.13v-.13h26.33v.05h84.55c12.76,0,23.32-9.32,25.26-21.53.22-1.32.32-2.68.32-4.05v-88.47h-51.14v21.49h15.02v45.45c0,10.33-6.12,19.23-14.95,23.26-3.23,1.49-6.84,2.31-10.63,2.31h-12.3v-163.55h54.84s47.77.01,47.77.01v184.29h100.87v-91.78h9.61c4.84,0,9.36,1.35,13.23,3.67,7.4,4.48,12.35,12.62,12.35,21.91v66.2h32.76v.27h131.87v-21.39h-67.62v-70.58h67.62v-21.35h-67.62v-70.58h67.62ZM198.89,418.36h-8.25c-2.83,0-5.53-.5-8.03-1.4-1.94-.69-3.74-1.64-5.38-2.8-5.02-3.5-8.5-8.91-9.31-15.14-.05-.04-.12-.09-.19-.12v-144.07h8.25c5.1,0,9.8,1.6,13.59,4.32,4.63,3.3,7.93,8.22,8.96,13.91.12.09.24.17.36.26v145.04ZM484.08,393.29c0,14.13-11.45,25.58-25.58,25.58h-16.34v-163.53s27.79-.32,27.73.47c8.81,4.02,14.18,14.77,14.18,25.11v112.37ZM620.2,326.35h-37.88v-71.03h12.3c3.79,0,7.39.82,10.62,2.31,8.83,4.02,14.96,12.93,14.96,23.26v45.45ZM1128.55,325.58h-35.19v-71.03h9.61c3.82,0,7.45.83,10.71,2.35,8.79,4.05,14.87,12.92,14.87,23.22v45.45Z"/>
+                <ellipse id="dot" class="cls-1" cx="1010.73" cy="205.78" rx="19.26" ry="19.24"/>
+            </svg> -->
+        </div>
+    </section>
+    <section id="about">
+        <div id="about-me">
+            <h1>About me</h1>
+            <div id="aboutContent"> 
+                <div class="about-text">
+                    <p>
+                        A boy who has a knack for finding problems and likes to fantasize about big ideas.<br>
+                        An Engineer who wants to be creative, learn new things, and solve problems every single day.<br>
+                        An Artist who is hungry to explore every single style that exists out there.<br>
+                        He likes to design campaigns, logos, websites and products.<br>
+                        If he is not working you would find him dreaming, sketching or working on a farm.
+                        <p>Would you like to help him explore creative stuff??</p>
+                    </p>
+                </div>
+                
+                <div class="contact-info">
+                    <h2>Contact Details</h2>
+                    <ul>
+                        <li>
+                            <span class="icon">📱</span>
+                            <span class="label">Phone:</span>
+                            <a href="tel:+919284013562">+919284013562</a>
+                        </li>
+                        <li>
+                            <span class="icon">📧</span>
+                            <span class="label">Email:</span>
+                            <a target="_blank" href="mailto:rahulkondamgire@gmail.com">rahulkondamgire@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="icon">📘</span>
+                            <span class="label">linkedIn:</span>
+                            <a target="_blank" href="https://www.linkedin.com/in/rahul-kondamgire-064b50169/">rahulkondamgire</a>
+                        </li>
+                        <li>
+                            <span class="icon">📍</span>
+                            <span class="label">Location:</span>
+                            <span>Mumbai, India</span>
+                        </li>
+                        <div class="cv-download">
+                            <a target="_blank" href="https://docs.google.com/document/d/1SgDx-_2cYQZ_iP1UP4gS8pptoqyrQZ73Nyd9CAm9EsY/edit?usp=sharing" target="_blank" class="download-btn">
+                                <span class="icon">📄</span>
+                                Download CV
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+    </section>
+    
+    <section id="work">
+        <div id="work-container">
+            
+            <div class="work-grid">
+                <!-- Sample work items - you can add more -->
+                
+                <div class="work-item" data-id="1" >
+                    <div class="work-image">
+                        <img src="/work/specAds/specCover.avif" alt="spec ads">
+                    </div>
+                    <div class="work-content">
+                        <h3>Spec Ads</h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+                <div class="work-item" data-id="2">
+                    <div class="work-image">
+                        <img src="/work/typographyAds/b1.webp" alt="Typography Art">
+                    </div>
+                    <div class="work-content">
+                        <h3>Typography Ads</h3>
+                        <!-- <p> more details about the work.</p> -->
+                    </div>
+                </div>
+                <!-- Add more items to test scrolling -->
+                <div class="work-item" data-id="3">
+                    <div class="work-image">
+                        <img src="/work/upsideDown/a1.webp" alt="Logo Design">
+                    </div>
+                    <div class="work-content">
+                        <h3>Creative Agency Branding </h3>
+                        <!-- <p></p> -->
+                    </div>
+                </div>
+                
+                <div class="work-item" data-id="4" >
+                    <div class="work-image">
+                        <img src="/work/nothing/nothing.webp" alt="Nothing Campaign">
+                    </div>
+                    <div class="work-content">
+                        <h3>Nothing</h3>
+                        <!-- <p></p> -->
+                    </div>
+                </div>
+                <div class="work-item" data-id="5" >
+                    <div class="work-image">
+                        <img src="/work/diluminati/cover.jpg" alt="Diluminati tour">
+                    </div>
+                    <div class="work-content">
+                        <h3>Diluminati Tour</h3>
+                        <!-- <p>Poster,vinyl cover, Billboard</p> -->
+                    </div>
+                </div>
+                <div class="work-item" data-id="6" >
+                    <div class="work-image">
+                        <img src="/work/bianco/cover.jpg" alt="bianco campaign">
+                    </div>
+                    <div class="work-content">
+                        <h3>Bianco</h3>
+                        <p>Photography for print campaign.</p>
+                    </div>
+                </div>
+                <div class="work-item" data-id="7" >
+                    <div class="work-image">
+                        <img src="/work/mac/cover.jpg" alt="Mac cosmetics">
+                    </div>
+                    <div class="work-content">
+                        <h3>Mac</h3>
+                        <!-- <p>Campaign for lipstick.</p> -->
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        
+        <!-- Modal container for expanded view -->
+        <div id="work-modal" class="modal">
+            <div class="modal-content">
+                <div id="modal-content-container"></div>
+            </div>
+        </div>
+    </section>
+    <span class="close-modal">&times;</span>
+    
+    <section id="other">
+        <div class="project-grid">
+            <div class="grid-container">
+                <!-- Project 1 -->
+                <div class="project-card" onclick="window.location.href='/other/loveHand.html'">
+                    <div class="video-container">
+                        <img src="/other/hhlove.png" alt="" srcset="">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Interactive Word</h3>
+                        <p class="project-description">
+                        </p>
+                        
+                        <a href="/other/loveHand.html" class="project-link" onclick="event.stopPropagation()">View Project</a>
+                    </div>
+                </div>
+    
+                <!-- Project 2 -->
+                <div class="project-card" onclick="window.location.href='/other/musicInAir.html'">
+                    <div class="video-container">
+                        <img src="other/image.jpg" alt="" srcset="">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Interactive Music</h3>
+                        <p class="project-description">
+                        
+                        </p>
+                        
+                        <a href="other/musicInAir.html" class="project-link" onclick="event.stopPropagation()">View Project</a>
+                    </div>
+                </div>
+               
+                
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                  <img src="other/2.1.JPG">
+                  <img src="other/DSC02174.JPG" alt="">
+                  <img src="other/unnamed (4).png" alt="">
+                  <img src="other/448746622_1941307006384667_2260541311781250526_n.jfif" alt="">
+                  <h1 style="color: blanchedalmond; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Thank you</h1>
+                  
+                </div>
+                <div class="column">
+                    <img src="other/DSC01672.JPG" alt="">
+                    <img src="other/DSC02617.JPG" alt="">
+                    <img src="other/unnamed.png" alt="">
+                    <img src="other/460091811_477631828610411_2364915544089701988_n.jfif" alt="">
+                    <img src="other/unnamed (2).png" alt="">
+                    <img src="other/unnamed (3).png" alt="">
+                </div>
+                <div class="column">
+                    <img src="other/DSC01649.JPG">
+                    <img src="other/DSC02060.JPG" alt="">
+                    <img src="other/unnamed (5).png" alt="">
+                    <img src="other/unnamed (1).png" alt="">
+                    <img src="other/450467478_493938743146206_4806483207452800083_n.jfif" alt="">
+                    <h3 style="color: blanchedalmond; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">*Designed and Developed by me.☺</h1>
+                    
+                </div>
+            </div>
+            <style>
+                .row {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0 4px;
+                }
+
+                /* Create four equal columns that sits next to each other */
+                .column {
+                flex: 30%;
+                max-width: 33%;
+                padding: 0 4px;
+                }
+
+                .column img {
+                margin-top: 8px;
+                vertical-align: middle;
+                width: 100%;
+                }
+
+                 /* Responsive layout - makes a two column-layout instead of four columns */
+                @media screen and (max-width: 800px) {
+                    .column {
+                        flex: 40%;
+                        max-width: 50%;
+                    }
+                } 
+
+                /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+                @media screen and (max-width: 600px) {
+                .column {
+                    flex: 100%;
+                    max-width: 100%;
+                }
+                }
+            </style>
+            
+        </div>
+    </section>
+    <!-- <img src="/1f58f402721f5fec42c859e68ca084c0.jpg" alt="" sizes="20, 20" srcset=""> -->
+
+    <!-- <marquee behavior="" direction="ltr">fkjaslfjlf </marquee> -->
+    <script src="script.js"></script>
+    <script src="sketch.js"></script>
+   
+</body>
+</html>
